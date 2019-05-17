@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.cg.plp.dao.IInventoryDao;
 import com.cg.plp.model.Inventory;
 
-@Service
+@Service("service6")
 public class IInventoryServiceImpl implements IInventoryService {
 
 	@Autowired
@@ -46,6 +46,11 @@ public class IInventoryServiceImpl implements IInventoryService {
 		inventory1.setProductStock(inventory1.getProductStock());
 		return inventoryDao.save(inventory1);
 
+	}
+
+	@Override
+	public Inventory findById(int id) {
+		return inventoryDao.findById(id).get();
 	}
 
 }
