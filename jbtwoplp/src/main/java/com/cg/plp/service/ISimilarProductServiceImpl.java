@@ -1,9 +1,9 @@
-package com.cg.product.service;
+package com.cg.plp.service;
 
 import java.util.List;
 
-import com.cg.product.Dao.IProduct;
-import com.cg.product.model.SimilarProduct;
+import com.cg.plp.dao.IProduct;
+import com.cg.plp.model.Product;
 
 
 public class ISimilarProductServiceImpl implements ISimilarProductService {

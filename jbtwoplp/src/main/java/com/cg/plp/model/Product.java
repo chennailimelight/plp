@@ -1,4 +1,4 @@
-package com.cg.product;
+package com.cg.plp.model;
 
 import java.util.List;
 

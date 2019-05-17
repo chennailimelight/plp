@@ -1,8 +1,8 @@
-package com.cg.product.dao;
+package com.cg.plp.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.cg.product.Product;
+import com.cg.plp.model.Product;
 
 public interface ProductDao  extends JpaRepository<Product,Integer> {
 }

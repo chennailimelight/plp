@@ -1,4 +1,4 @@
-package com.cg.product.model;
+package com.cg.plp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

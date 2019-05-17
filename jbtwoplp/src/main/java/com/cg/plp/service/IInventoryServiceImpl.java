@@ -1,12 +1,12 @@
-package com.cg.Shopping.Cart.service;
+package com.cg.plp.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.Shopping.Cart.dao.IInventoryDao;
-import com.cg.Shopping.Cart.model.Inventory;
+import com.cg.plp.dao.IInventoryDao;
+import com.cg.plp.model.Inventory;
 
 @Service
 public class IInventoryServiceImpl implements IInventoryService {

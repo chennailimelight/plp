@@ -1,4 +1,4 @@
-package com.cg.Shopping.Cart.model;
+package com.cg.plp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
