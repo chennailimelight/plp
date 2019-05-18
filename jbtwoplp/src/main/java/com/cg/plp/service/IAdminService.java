@@ -19,6 +19,7 @@ public interface IAdminService {
 	public void sendEmail(String receiverEmail, String subject, String message);
 
 	public void sendCoupon(String receiverEmail);
+	
 
 	public void sendFeedback(Feedback feedback);
 

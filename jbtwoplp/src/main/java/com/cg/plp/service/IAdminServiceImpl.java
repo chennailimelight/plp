@@ -35,6 +35,7 @@ public class IAdminServiceImpl implements IAdminService {
 	public String generateCoupon() {
 		int length = 10;
 		String coupon = "";
+		
 		String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
 		for (int i = 0; i < length; i++) {
 			int index = (int) ((AlphaNumericString.length()) * Math.random());
