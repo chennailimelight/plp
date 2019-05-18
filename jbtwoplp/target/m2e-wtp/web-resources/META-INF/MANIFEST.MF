@@ -1,9 +1,13 @@
 Manifest-Version: 1.0
 Implementation-Title: plp
 Implementation-Version: 0.0.1-SNAPSHOT
+<<<<<<< HEAD
 Built-By: abrah
+=======
+Built-By: Anoop Joshi
+>>>>>>> e400962cee79fa10380bd5888b6b2a20065e2011
 Implementation-Vendor-Id: com.cg
-Build-Jdk: 1.8.0_201
+Build-Jdk: 1.8.0_191
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/plp
 Created-By: Maven Integration for Eclipse

@@ -3,6 +3,7 @@ package com.cg.plp.service;
 import java.util.List;
 
 import com.cg.plp.model.Customer;
+import com.cg.plp.model.Feedback;
 import com.cg.plp.model.Inventory;
 import com.cg.plp.model.Merchant;
 

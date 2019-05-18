@@ -19,6 +19,7 @@ import com.cg.plp.dao.IInventoryDao;
 import com.cg.plp.dao.IMerchantDao;
 import com.cg.plp.dao.IMerchantDao;
 import com.cg.plp.model.Customer;
+import com.cg.plp.model.Feedback;
 import com.cg.plp.model.Inventory;
 import com.cg.plp.model.Merchant;
 
@@ -86,7 +87,7 @@ public class IAdminServiceImpl implements IAdminService {
 
 	@Override
 	public void sendFeedback(Feedback feedback) {
-		this.sendEmail(feedback.getEmail(), feedback.getSubject(), feedback.getMessage);
+		this.sendEmail(feedback.getEmail(), feedback.getSubject(), feedback.getMessage());
 	}
 
 	@Override
