@@ -20,7 +20,6 @@ public interface IAdminService {
 
 	public void sendCoupon(String receiverEmail);
 	
-
 	public void sendFeedback(Feedback feedback);
 
 }
