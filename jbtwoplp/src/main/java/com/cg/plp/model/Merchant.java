@@ -1,117 +1,99 @@
 package com.cg.plp.model;
-package com.cg.CustomerProducts.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import lombok.Data;
+
+@Data
 @Entity
-@Table(name = "merc_details2")
+@Table(name = "merchant")
 public class Merchant {
 	@Id
-
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
-	@SequenceGenerator(name = "seq", sequenceName = "seq80_cus_id", allocationSize = 1)
-	private int id;
+	@SequenceGenerator(name = "seq", sequenceName = "seq123_merchantId", allocationSize = 1)
+	private int merchantId;
+	private String merchantName;
+	private String merchantEmail;
+	private String merchantPassword;
+	private String merchantPhone;
+	private String merchantAddress;
+	private String merchantShopname;
+	private int productId;
 
-	
-
-	private String name;
-	private String email;
-	public String getEmail() {
-		return email;
+	public int getMerchantId() {
+		return merchantId;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMerchantId(int merchantId) {
+		this.merchantId = merchantId;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getMerchantName() {
+		return merchantName;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setMerchantName(String merchantName) {
+		this.merchantName = merchantName;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getMerchantEmail() {
+		return merchantEmail;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setMerchantEmail(String merchantEmail) {
+		this.merchantEmail = merchantEmail;
 	}
 
-	public String getShopname() {
-		return shopname;
+	public String getMerchantPassword() {
+		return merchantPassword;
 	}
 
-	public void setShopname(String shopname) {
-		this.shopname = shopname;
+	public void setMerchantPassword(String merchantPassword) {
+		this.merchantPassword = merchantPassword;
 	}
 
-	public int getProductid() {
-		return productid;
+	public String getMerchantPhone() {
+		return merchantPhone;
 	}
 
-	public void setProductid(int productid) {
-		this.productid = productid;
+	public void setMerchantPhone(String merchantPhone) {
+		this.merchantPhone = merchantPhone;
 	}
 
-	private String phone;
-	private String address;
-	private String shopname;
-	private int productid;
-	private int balance;
-	
-
-	@OneToMany(mappedBy = "merchant", cascade = CascadeType.ALL)
-	private Set<MerchantTransaction> transaction = new HashSet<>();
-
-	public Set<MerchantTransaction> getTransaction() {
-		return transaction;
+	public String getMerchantAddress() {
+		return merchantAddress;
 	}
 
-	public void setTransaction(Set<MerchantTransaction> transaction) {
-		this.transaction = transaction;
+	public void setMerchantAddress(String merchantAddress) {
+		this.merchantAddress = merchantAddress;
 	}
 
-
-	public int getId() {
-		return id;
+	public String getMerchantShopname() {
+		return merchantShopname;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setMerchantShopname(String merchantShopname) {
+		this.merchantShopname = merchantShopname;
 	}
 
-	public String getName() {
-		return name;
+	public int getProductId() {
+		return productId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 
-	public int getBalance() {
-		return balance;
+	@Override
+	public String toString() {
+		return "Merchant [merchantId=" + merchantId + ", merchantName=" + merchantName + ", merchantEmail="
+				+ merchantEmail + ", merchantPassword=" + merchantPassword + ", merchantPhone=" + merchantPhone
+				+ ", merchantAddress=" + merchantAddress + ", merchantShopname=" + merchantShopname + ", productId="
+				+ productId + "]";
 	}
-
-	public void setBalance(int balance) {
-		this.balance = balance;
-	}
-
-	public void addTransaction(MerchantTransaction transaction) {
-		transaction.setMerchant(this); // this will avoid nested cascade
-		this.getTransaction().add(transaction);
-	}
-
 }
