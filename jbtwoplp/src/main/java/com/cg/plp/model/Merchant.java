@@ -1,73 +1,117 @@
 package com.cg.plp.model;
+package com.cg.CustomerProducts.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import lombok.Data;
-
-@Data
 @Entity
-@Table(name = "merchant")
+@Table(name = "merc_details2")
 public class Merchant {
 	@Id
+
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
-	@SequenceGenerator(name = "seq", sequenceName = "seq123_merchantId", allocationSize = 1)
-	private int merchantId;
-	private String merchantName;
-	private String merchantEmail;
-	private String merchantPhone;
-	private String merchantAddress;
-	private String merchantShopname;
-	private int productId;
-	public int getMerchantId() {
-		return merchantId;
+	@SequenceGenerator(name = "seq", sequenceName = "seq80_cus_id", allocationSize = 1)
+	private int id;
+
+	
+
+	private String name;
+	private String email;
+	public String getEmail() {
+		return email;
 	}
-	public void setMerchantId(int merchantId) {
-		this.merchantId = merchantId;
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getMerchantName() {
-		return merchantName;
+
+	public String getPhone() {
+		return phone;
 	}
-	public void setMerchantName(String merchantName) {
-		this.merchantName = merchantName;
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-	public String getMerchantEmail() {
-		return merchantEmail;
+
+	public String getAddress() {
+		return address;
 	}
-	public void setMerchantEmail(String merchantEmail) {
-		this.merchantEmail = merchantEmail;
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getMerchantPhone() {
-		return merchantPhone;
+
+	public String getShopname() {
+		return shopname;
 	}
-	public void setMerchantPhone(String merchantPhone) {
-		this.merchantPhone = merchantPhone;
+
+	public void setShopname(String shopname) {
+		this.shopname = shopname;
 	}
-	public String getMerchantAddress() {
-		return merchantAddress;
+
+	public int getProductid() {
+		return productid;
 	}
-	public void setMerchantAddress(String merchantAddress) {
-		this.merchantAddress = merchantAddress;
+
+	public void setProductid(int productid) {
+		this.productid = productid;
 	}
-	public String getMerchantShopname() {
-		return merchantShopname;
+
+	private String phone;
+	private String address;
+	private String shopname;
+	private int productid;
+	private int balance;
+	
+
+	@OneToMany(mappedBy = "merchant", cascade = CascadeType.ALL)
+	private Set<MerchantTransaction> transaction = new HashSet<>();
+
+	public Set<MerchantTransaction> getTransaction() {
+		return transaction;
 	}
-	public void setMerchantShopname(String merchantShopname) {
-		this.merchantShopname = merchantShopname;
+
+	public void setTransaction(Set<MerchantTransaction> transaction) {
+		this.transaction = transaction;
 	}
-	public int getProductId() {
-		return productId;
+
+
+	public int getId() {
+		return id;
 	}
-	public void setProductId(int productId) {
-		this.productId = productId;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	@Override
-	public String toString() {
-		return "Merchant [merchantId=" + merchantId + ", merchantName=" + merchantName + ", merchantEmail="
-				+ merchantEmail + ", merchantPhone=" + merchantPhone + ", merchantAddress=" + merchantAddress
-				+ ", merchantShopname=" + merchantShopname + ", productId=" + productId + "]";
-	}}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+	public void addTransaction(MerchantTransaction transaction) {
+		transaction.setMerchant(this); // this will avoid nested cascade
+		this.getTransaction().add(transaction);
+	}
+
+}
