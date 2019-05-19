@@ -1,12 +1,9 @@
 package com.cg.plp.service;
 
-import com.cg.crachrecovery.model.CrachRecovery;
+import com.cg.plp.model.CrachRecovery;
+import com.cg.plp.model.Product;
 
-import java.util.List;
-
-import com.cg.crachrecovery.model.Product;
-
-public interface CrachRecoveryService {
+public interface CartRecoveryService {
 	
 public Product addItem(int pid,int custid);
 	

@@ -12,14 +12,26 @@ import com.cg.plp.model.Invoice;
 
 public class IInvoiceServiceImpl implements IInvoiceService {
 	@PersistenceContext
-	   private EntityManager em;
+	private EntityManager em;
+
 	@Autowired
-	private IInvoiceDao invoiceDao;
+	private  IInvoiceDao  dao;
+
 	
 	@Override
-	public Invoice FindByInvoicenum(Integer invoicenum) {
-		Invoice invoice=invoiceDao.FindByInvoicenum(invoicenum);
-		return invoice;
+	public Invoice findById(Integer productId) {
+		return null;
+	}
+
+	@Override
+	public void delete(Invoice cart) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void save(Invoice cart) {
+    dao.save(cart);		
 	}
 	
 

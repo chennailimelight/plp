@@ -1,4 +1,4 @@
-package com.cg.crachrecovery.service;
+package com.cg.plp.service;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -7,21 +7,21 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.cg.crachrecovery.model.Customer;
-import com.cg.crachrecovery.model.Product;
-import com.cg.crachrecovery.model.CrachRecovery;
-import com.cg.crachrecovery.repository.CrachRecoveryCustomer;
-import com.cg.crachrecovery.repository.CrachRecoverytProduct;
-import com.cg.crachrecovery.repository.WishlistRepository;
+import com.cg.plp.dao.CartRecoveryCustomerDao;
+import com.cg.plp.dao.CartRecoveryProductDao;
+import com.cg.plp.dao.IWishlistDao;
+import com.cg.plp.model.CrachRecovery;
+import com.cg.plp.model.Customer;
+import com.cg.plp.model.Product;
 
 @Component
-public class CrachRecoveryServiceImpl implements CrachRecoveryService {
+public class CartRecoveryServiceImpl implements CartRecoveryService {
 	@Autowired
-	WishlistRepository repo;
+	IWishlistDao repo;
 	@Autowired
-	CrachRecoverytProduct repoprod;
+	CartRecoveryProductDao repoprod;
 	@Autowired
-	CrachRecoveryCustomer repocust;
+	CartRecoveryCustomerDao repocust;
 
 	
 
