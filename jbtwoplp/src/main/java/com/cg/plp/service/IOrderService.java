@@ -2,7 +2,7 @@ package com.cg.plp.service;
 
 import java.util.List;
 
-import com.cg.plp.model.Order;
+import com.cg.CustomerProducts.model.Order;
 
 public interface IOrderService {
 
