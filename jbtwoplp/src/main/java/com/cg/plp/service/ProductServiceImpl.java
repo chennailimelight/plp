@@ -1,4 +1,4 @@
-package com.cg.product.Service;
+package com.cg.plp.service;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.product.Product;
-import com.cg.product.dao.ProductDao;
+import com.cg.plp.dao.ProductDao;
+import com.cg.plp.model.Product;
 
 
 

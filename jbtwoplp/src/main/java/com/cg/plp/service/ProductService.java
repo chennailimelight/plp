@@ -1,8 +1,8 @@
-package com.cg.product.Service;
+package com.cg.plp.service;
 
 import java.util.List;
 
-import com.cg.product.Product;
+import com.cg.plp.model.Product;
 
 public interface ProductService {
 	public List<Product> findAll();
