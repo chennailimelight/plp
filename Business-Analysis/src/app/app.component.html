@@ -1,0 +1,29 @@
+<html>
+    <head>
+    </head>
+    <body>
+      <div id="back">
+        <div id="back-overlay">
+          <header>
+            <a href="" id="home">Home</a>
+            <div id="nametag">Products Details</div>
+          </header>
+          <div id="searchelements">
+            <input type="text" autofocus required placeholder="Search" name="id">
+            <div class="dropdown" style="height:inherit;">
+                <button class="dropbtn">Search By</button>
+                <div class="dropdown-content">
+                    <a routerLink="/productid">Product ID</a>
+                    <a routerLink="/category">Product Category</a>
+                    <a routerLink="/merchantid">Merchant ID</a>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+
+

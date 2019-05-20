@@ -1,0 +1,69 @@
+body{
+    margin: 0px;
+    align-items: center;
+    }
+#back{
+    background-image:  url(assets/images/background1.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 0;
+}
+
+#back-overlay{
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    top:0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+header{
+    display:block;
+    height:12%;
+    width:100%;
+    position:relative;
+    top:0;
+    background:linear-gradient(180deg,rgba(0,0,0,1),rgba(0,0,0,0));
+}
+#home{
+    color: white; 
+    display:block;
+    float:right;
+    position:absolute;
+    right:50pt;
+    top:25pt;
+    font-size:18pt;
+}
+#nametag{
+    position:absolute;
+    left:25pt;
+    top:20pt;
+    font-size:28pt;
+    color:white;
+}
+#searchelements{
+    position:relative;
+    width:100%;
+    height:35pt;
+    background:rgba(0,0,0,0);
+    text-align: center;
+}
+#searchelements input[type="text"]{
+    width:70%;
+    height:inherit;
+    padding:0;
+    margin:0pt;
+    text-align: center;
+    font-size:inherit;
+}
+#searchelements button{
+    font-size:larger;
+}
+.dropdown-content[_ngcontent-fvs-c0]{
+    z-index:3;
+}
