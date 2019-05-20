@@ -1,8 +1,11 @@
 package com.cg.plp.service;
 
+import java.security.Key;
 import java.util.List;
 import java.util.Properties;
 
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -23,6 +26,9 @@ import com.cg.plp.model.Feedback;
 import com.cg.plp.model.Inventory;
 import com.cg.plp.model.Merchant;
 
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
+
 @Service
 public class IAdminServiceImpl implements IAdminService {
 	@Autowired
@@ -32,6 +38,7 @@ public class IAdminServiceImpl implements IAdminService {
 	@Autowired
 	CustomerDao customer;
 
+	String key = "sdfsfsdfsddfsaee";
 	@Override
 	public String generateCoupon() {
 		int length = 10;
@@ -101,5 +108,46 @@ public class IAdminServiceImpl implements IAdminService {
 		this.sendEmail(receiverEmail, subject, message);
 
 	}
+	@Override
+	public String encryptPassword(String password) {
+		String newpwd=password;
+		String ALGO = "AES";
+		byte[] keyValue;
+		keyValue = key.getBytes();
+		Key pkey = new SecretKeySpec(keyValue, ALGO);
+		Cipher cp;
+		String encryptedValue="";
+		try {
+			cp = Cipher.getInstance(ALGO);
+			cp.init(Cipher.ENCRYPT_MODE, pkey);
+			byte[] encval = cp.doFinal(newpwd.getBytes());
+			encryptedValue = new BASE64Encoder().encode(encval);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return encryptedValue;
+	}
 
+	@Override
+	public String decryptPassword(String password) {
+		String tok = password;
+		String ALGO = "AES";
+		byte[] keyValue;
+		System.out.println("token=" + tok);
+		String decPassword="";
+		try {
+			keyValue = key.getBytes();
+			Key nkey = new SecretKeySpec(keyValue, ALGO);
+			Cipher c = Cipher.getInstance(ALGO);
+			c.init(Cipher.DECRYPT_MODE, nkey);
+			byte[] decodedValue = new BASE64Decoder().decodeBuffer(tok);
+			byte[] decValue = c.doFinal(decodedValue);
+			decPassword = new String(decValue);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return decPassword;
+	}
 }

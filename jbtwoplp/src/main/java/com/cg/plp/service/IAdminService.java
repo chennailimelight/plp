@@ -23,4 +23,8 @@ public interface IAdminService {
 	
 	public void sendFeedback(Feedback feedback);
 
+	String decryptPassword(String password);
+
+	String encryptPassword(String password);
+
 }
