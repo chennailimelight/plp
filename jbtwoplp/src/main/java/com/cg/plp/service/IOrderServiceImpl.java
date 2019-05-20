@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.CustomerProducts.dao.IOrder;
-import com.cg.CustomerProducts.model.Order;
+import com.cg.plp.dao.IOrder;
+import com.cg.plp.model.Order;
 
 @Service("service3")
 public class IOrderServiceImpl implements IOrderService {
