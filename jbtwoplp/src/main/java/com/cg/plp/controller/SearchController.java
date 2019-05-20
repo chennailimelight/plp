@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cg.capstore.search.entity.CustomerEntity;
-import com.cg.capstore.search.entity.MerchantEntity;
-import com.cg.capstore.search.entity.ProductEntity;
-import com.cg.capstore.search.service.SearchServiceInterface;
+import com.cg.plp.model.CustomerEntity;
+import com.cg.plp.model.MerchantEntity;
+import com.cg.plp.model.ProductEntity;
+import com.cg.plp.service.SearchServiceInterface;
 
 @Configuration
 @Controller

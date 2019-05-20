@@ -1,22 +1,19 @@
 package com.cg.plp.model;
 
 import java.sql.Date;
-
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
-public class CrachRecovery 
+public class CartRecovery 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -61,7 +58,7 @@ public class CrachRecovery
 		this.product = product;
 	}
 
-	public CrachRecovery(int id, Date startTime, Date endTime, List product) {
+	public CartRecovery(int id, Date startTime, Date endTime, List product) {
 		super();
 		this.id = id;
 		this.startTime = startTime;
@@ -69,7 +66,7 @@ public class CrachRecovery
 		this.product = product;
 	}
 
-	public CrachRecovery() {
+	public CartRecovery() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

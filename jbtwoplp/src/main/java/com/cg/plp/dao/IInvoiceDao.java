@@ -7,7 +7,6 @@ import com.cg.plp.model.Invoice;
 public interface IInvoiceDao extends JpaRepository<Invoice,Integer>
 {
 
-	Invoice FindByInvoicenum(Integer invoicenum);
 	
 
 }

@@ -11,13 +11,38 @@ import javax.persistence.Table;
 @Table(name = "cust_order")
 public class Order {
 
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 	@SequenceGenerator(name = "seq", sequenceName = "seq89_cus_id", allocationSize = 1)
+	
 	private int orderid;
+	
+	@Override
+	public String toString() {
+		return "Order [orderid=" + orderid + ", productname=" + productname + ", productquantity=" + productquantity
+				+ ", productprice=" + productprice + ", discountedprice=" + discountedprice + "]";
+	}
 	private String productname;
 	private int productquantity;
+	private int productprice;
+	public int getProductprice() {
+		return productprice;
+	}
+	public void setProductprice(int productprice) {
+		this.productprice = productprice;
+	}
+	public int getDiscountedprice() {
+		return discountedprice;
+	}
+	public void setDiscountedprice(int discountedprice) {
+		this.discountedprice = discountedprice;
+	}
+	private int discountedprice;
+	
+	
+	
+
 	public int getOrderid() {
 		return orderid;
 	}
@@ -36,13 +61,8 @@ public class Order {
 	public void setProductquantity(int productquantity) {
 		this.productquantity = productquantity;
 	}
-	@Override
-	public String toString() {
-		return "Order [orderid=" + orderid + ", productname=" + productname + ", productquantity=" + productquantity
-				+ ", getOrderid()=" + getOrderid() + ", getProductname()=" + getProductname()
-				+ ", getProductquantity()=" + getProductquantity() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
-	}
+	
+	
 	
 	
 	
