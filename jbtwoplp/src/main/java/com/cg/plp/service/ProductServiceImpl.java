@@ -1,4 +1,4 @@
-package com.cg.plp.service;
+package com.cg.product.Service;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.plp.dao.ProductDao;
-import com.cg.plp.model.Product;
+import com.cg.product.Product;
+import com.cg.product.dao.ProductDao;
 
 
 
@@ -35,9 +35,9 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public Product findById(Integer Product_id) {
-		Product product = productdao.findById(Product_id).get();
-		return product;
+	public Product findById(Integer Product_Id) {
+		Product prod= productdao.findById(Product_Id).get();
+		return prod;
 	}
 	
 	@Override
