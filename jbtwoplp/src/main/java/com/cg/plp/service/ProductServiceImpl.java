@@ -1,4 +1,4 @@
-package com.cg.plp.service;
+package com.cg.product.Service;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.plp.dao.ProductDao;
-import com.cg.plp.model.Product;
+import com.cg.product.Product;
+import com.cg.product.dao.ProductDao;
 
 
 
@@ -52,6 +52,21 @@ public class ProductServiceImpl implements ProductService {
 		product1.setQuantity(product1.getQuantity());
 		product1.setMerchant_Id(product1.getMerchant_Id());
 		return productdao.save(product1);
+	}
+	
+	@Override
+	public List<Product> find(Integer Product_Id)
+	{
+		List<Product>prod= productdao.find(Product_Id);
+		return prod;
+	}
+	
+	@Override
+	public List<Product> Category()
+	{
+		List<Product>prodlist =productdao.findAll();
+		
+		return prodlist;
 	}
 }
 	
