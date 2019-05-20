@@ -19,55 +19,81 @@ public class Merchant {
 	private int merchantId;
 	private String merchantName;
 	private String merchantEmail;
+	private String merchantPassword;
 	private String merchantPhone;
 	private String merchantAddress;
 	private String merchantShopname;
 	private int productId;
+
 	public int getMerchantId() {
 		return merchantId;
 	}
+
 	public void setMerchantId(int merchantId) {
 		this.merchantId = merchantId;
 	}
+
 	public String getMerchantName() {
 		return merchantName;
 	}
+
 	public void setMerchantName(String merchantName) {
 		this.merchantName = merchantName;
 	}
+
 	public String getMerchantEmail() {
 		return merchantEmail;
 	}
+
 	public void setMerchantEmail(String merchantEmail) {
 		this.merchantEmail = merchantEmail;
 	}
+
+	public String getMerchantPassword() {
+		return merchantPassword;
+	}
+
+	public void setMerchantPassword(String merchantPassword) {
+		this.merchantPassword = merchantPassword;
+	}
+
 	public String getMerchantPhone() {
 		return merchantPhone;
 	}
+
 	public void setMerchantPhone(String merchantPhone) {
 		this.merchantPhone = merchantPhone;
 	}
+
 	public String getMerchantAddress() {
 		return merchantAddress;
 	}
+
 	public void setMerchantAddress(String merchantAddress) {
 		this.merchantAddress = merchantAddress;
 	}
+
 	public String getMerchantShopname() {
 		return merchantShopname;
 	}
+
 	public void setMerchantShopname(String merchantShopname) {
 		this.merchantShopname = merchantShopname;
 	}
+
 	public int getProductId() {
 		return productId;
 	}
+
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
+
 	@Override
 	public String toString() {
 		return "Merchant [merchantId=" + merchantId + ", merchantName=" + merchantName + ", merchantEmail="
-				+ merchantEmail + ", merchantPhone=" + merchantPhone + ", merchantAddress=" + merchantAddress
-				+ ", merchantShopname=" + merchantShopname + ", productId=" + productId + "]";
-	}}
+				+ merchantEmail + ", merchantPassword=" + merchantPassword + ", merchantPhone=" + merchantPhone
+				+ ", merchantAddress=" + merchantAddress + ", merchantShopname=" + merchantShopname + ", productId="
+				+ productId + "]";
+	}
+}

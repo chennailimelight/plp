@@ -6,7 +6,7 @@ import com.cg.plp.model.Inventory;
 
 public interface IInventoryService {
 
-	public abstract void save(Inventory inventory);
+	
 	
 	public abstract void delete(Inventory inventory);
 	
@@ -15,5 +15,9 @@ public interface IInventoryService {
 	public List<Inventory> findAllProducts();
 	
 	public abstract Inventory updateExistingProduct(Inventory inventory);
+	
+	public Inventory findById(int id);
+	
+	public void save(Inventory inventory);
 	
 }
