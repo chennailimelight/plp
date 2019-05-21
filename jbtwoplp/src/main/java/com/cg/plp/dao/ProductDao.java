@@ -19,8 +19,18 @@ public interface ProductDao  extends JpaRepository<Product,Integer> {
 	@Query(value = "SELECT MAX(u.Orig_Price) FROM products u WHERE u.Product_Id = :Product_Id ", nativeQuery = true)
 			List<Product> find(  @Param("Product_Id") Integer Product_Id);
 	
-	@Query(value = "SELECT * FROM products u WHERE u.Category=:Category ", nativeQuery = true)
-	List<Product> Category(@Param("Category")String Category );
+	@Query(value = "SELECT * FROM products u ORDERBY u.Category ", nativeQuery = true)
+	Product Category(
+			);
+	
+	@Query(value = "SELECT p.productid,p.quantity FROM products p WHERE u.Product_Id= :Product_Id and u.Quantity=>1 ",nativeQuery = true)
+			List<Product>order(@Param("Product_Id") Integer Product_Id);
+	
+	@Query(value = "SELECT u FROM products u ORDERBY u.Orig_Price  ", nativeQuery = true)
+	List<Product> price(  );
 }
+
+
+
 
  
