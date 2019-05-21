@@ -36,7 +36,7 @@ public class ProductController {
 	}
 
 	
-	@GetMapping(path = "/allorders")
+	@GetMapping(path = "/allprods")
 	public List<Product> findAll() {
 		return service.findAll();
 
@@ -61,8 +61,14 @@ public class ProductController {
 	public ResponseEntity<Product> order(@PathVariable("Product_Id") Integer Product_Id)
 	{
 		Product prod =service.findById(Product_Id);
+		if(prod.getQuantity()==0)
+		{return new ResponseEntity("Quantity is 0",HttpStatus.CREATED);
+		}
+		else
+		{	
 		return new ResponseEntity<Product>(prod,HttpStatus.CREATED);
 	}
+	}	
 	
 	@GetMapping(path= "/price")
 	public List<Product> price()
