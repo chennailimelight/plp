@@ -50,15 +50,26 @@ public class ProductController {
 	}
 	
 	@GetMapping(path= "/Category")
-	public ResponseEntity<Product> Category()
+	public List<Product> Category()
 		{
-		List<Product> prodl=service.findAll();
-		return new ResponseEntity<Product>(prodl,HttpStatus.CREATED);
+		
+		return service.findAll();
 		
 		}
 	
-	/*
-	 * @GetMapping(path = "/viewbyproduct") public Iterable<MostView>
-	 * viewByProduct() { return service.viewByProduct(); }
-	 */
+	@GetMapping(path= "/order/{Product_Id}")
+	public ResponseEntity<Product> order(@PathVariable("Product_Id") Integer Product_Id)
+	{
+		Product prod =service.findById(Product_Id);
+		return new ResponseEntity<Product>(prod,HttpStatus.CREATED);
+	}
+	
+	@GetMapping(path= "/price")
+	public List<Product> price()
+		{
+		
+		return service.findAll();
+		
+		}
+
 }
