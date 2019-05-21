@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cg.product.Product;
 
+
 public interface ProductService {
 	public List<Product> findAll();
 
@@ -16,5 +17,11 @@ public interface ProductService {
 	
 	public List<Product> find(Integer Product_Id);
 	
-	public List<Product> Category();
+	public List<Product> order(Integer Product_Id);
+	
+	public List<Product> findByCategory(); 
+	
+	public List<Product> price();
+        
+    
 }

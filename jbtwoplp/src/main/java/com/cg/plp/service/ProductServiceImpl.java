@@ -13,6 +13,7 @@ import com.cg.product.dao.ProductDao;
 
 
 
+
 @Service("service")
 public class ProductServiceImpl implements ProductService {
 
@@ -61,12 +62,29 @@ public class ProductServiceImpl implements ProductService {
 		return prod;
 	}
 	
+	
 	@Override
-	public List<Product> Category()
+	public List<Product> findByCategory() {
+        
+		List<Product> prodl = productdao.findAll();
+        return prodl;
+    }
+	
+
+	@Override
+	public List<Product> order(Integer Product_Id)
 	{
-		List<Product>prodlist =productdao.findAll();
-		
-		return prodlist;
+		List<Product>prod= productdao.find(Product_Id);
+		return prod;
 	}
+	
+	@Override
+	public List<Product> price()
+	{
+		List<Product> prodl = productdao.findAll();
+        return prodl;
+    
+	}
+	
 }
 	

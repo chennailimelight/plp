@@ -29,7 +29,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/SUMIT/Desktop/Capgemeni/Module 3/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SUMIT/Desktop/Capgemeni/Module 3/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="G:/CapgeminiMaterials/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="G:/CapgeminiMaterials/ojdbc6.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
