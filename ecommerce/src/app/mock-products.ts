@@ -1,0 +1,32 @@
+import {Product} from './product';
+export const PRODUCTS: Product[] = [
+    {id: 1,
+        name: "Mens Cap",
+        category: "Cap",
+        price: 2000,
+        discount: 20,
+        description: "Some text about the product. Super slim and comfy",
+        
+        image:"../../assets/images/cap.jpg",},
+    {id: 2,
+        name: "Adidas",
+        category: "Cap",
+        price: 9000,
+        discount: 10,
+        description: "Some text about the product.",
+        image:"../../assets/images/adidas.jpg",},
+    {id: 3,
+        name: "Mens Jeans",
+        category: "Jeans",
+        price: 2000,
+        discount: 20,
+        description: "Some text about the product. Super slim and comfy",
+        image:"../../assets/images/jeans.jpg"},
+    {id: 4,
+        name: "Eau de Toilette",
+        category: "Perfume",
+        price: 8900,
+        discount: 10,
+        description: "use it ,it's is good bro.",
+        image:"../../assets/images/eaude.jpg",}
+];

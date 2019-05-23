@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+</style>
+
+
+</head>
+
+<body>
+
+<form action="/capg/signup" method="post" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" pattern="[^ @]*@[^ @]*" title="Please enter a valid email id" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+    
+        <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Password" name="name" required>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+
+
+    <div class="clearfix">
+ 
+      <button type="submit" class="signupbtn">Sign up</button>
+    </div>
+  </div>
+</form>
+
+</body>
+
+</html>

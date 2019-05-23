@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+​
+<h2 style="text-align:center">Products</h2>
+​
+<div class="card">
+  <img class="card-img-top" src={{selectedProduct.image}} alt="product-image" style="width:100%">
+  <h1 class="card-title" >{{selectedProduct.name}} </h1>
+  <div class="card-body"></div>
+    <p>{{selectedProduct.category}}</p>
+    <p class="price">${{selectedProduct.price}}</p>
+    <p>{{selectedProduct.description}}</p>
+    <p>Get a discount of {{selectedProduct.discount}}%</p>
+  <p><button class="btn btn-primary">Add to Cart</button></p>
+</div>
+
+<br>
+
+<div style="text-align:center">
+<a routerLink="/feedback">Write a feedback for this product.</a>
+</div>
+<br>
+<br>
+
+<h2 align = "center">List of other Products :</h2>
+<ul class="products" align = "center">
+  <span>
+    <h3>
+    <li *ngFor="let product of products" [class.selected]="product === selectedProduct" (click)="onSelect(product)">{{ product.name }} </li>
+    </h3>
+  </span>
+</ul>
+
+
+<app-feedback-detail [feedback] = "selectedFeedback"></app-feedback-detail>
+
+<router-outlet></router-outlet>
+
+</body>
+</html>
