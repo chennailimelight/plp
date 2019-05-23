@@ -64,6 +64,10 @@ public class Customer {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
+	public void setPassword(String encryptedValue) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
